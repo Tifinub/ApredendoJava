@@ -6,6 +6,6 @@ public class Variaveis {
         double altura = 1.90;
         final double PI = 3.14;
 
-        System.out.print("Nome: " + nome + "\nIdade: " + idade + "\nAltura: " + altura + "\npi: " + PI);
+        System.out.println("Nome: " + nome + "\nIdade: " + idade + "\nAltura: " + altura + "\npi: " + PI);
     }
 }
