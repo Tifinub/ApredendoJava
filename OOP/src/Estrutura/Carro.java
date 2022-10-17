@@ -1,40 +1,42 @@
+package Estrutura;
+
 public class Carro {
 
     String cor;
     String modelo;
     double tanqueTotal;
 
-    Carro(){
+    public Carro(){
 
     }
 
-    Carro(String cor, String modelo, int tanqueTotal) {
+    public Carro(String cor, String modelo, int tanqueTotal) {
         this.cor = cor;
         this.modelo = modelo;
         this.tanqueTotal = tanqueTotal;
     }
 
-    void setCor(String cor){
+    public void setCor(String cor){
         this.cor = cor;
     }
-    String getCor(){
+    public String getCor(){
         return cor;
     }
-    void setModelo(String modelo){
+    public void setModelo(String modelo){
         this.modelo = modelo;
     }
-    String getModelo(){
+    public String getModelo(){
        return modelo;
     }
 
-    void setTanqueTotal(double tanqueTotal){
+    public void setTanqueTotal(double tanqueTotal){
         this.tanqueTotal = tanqueTotal;
     }
-    double getTanqueTotal(){
+    public double getTanqueTotal(){
        return tanqueTotal;
     }
 
-    double totalValorTanque(double valorCombustivel) {
+    public double totalValorTanque(double valorCombustivel) {
         return tanqueTotal * valorCombustivel;
     }
 
