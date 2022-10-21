@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
-public class App {
+public class Lista {
     public static void main(String[] args) throws Exception {
         List<Double> notas = new ArrayList<>();
 
