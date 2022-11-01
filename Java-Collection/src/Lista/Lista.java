@@ -1,7 +1,10 @@
+package Lista;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
+
 public class Lista {
     public static void main(String[] args) throws Exception {
         List<Double> notas = new ArrayList<>();
@@ -24,42 +27,40 @@ public class Lista {
 
         System.out.println("Exiba a 3 nota:" + notas.get(2));
 
-
         System.out.println("Substitua a nota 5.5 pela 7");
-        notas.set(notas.indexOf(5.5d),7d);
+        notas.set(notas.indexOf(5.5d), 7d);
         System.out.println(notas);
 
         System.out.println("Exiba todas as notas na ordem que foram informadas");
 
         // for (Double nota : notas) {
-        //     System.out.println(nota);            
+        // System.out.println(nota);
         // }
-        
+
         System.out.println("Exiba a menor nota: " + Collections.min(notas));
 
         System.out.println("Exiba a maior nota: " + Collections.max(notas));
 
-
         Iterator<Double> iterator = notas.iterator();
         Double soma = 0d;
 
-        while(iterator.hasNext()){
+        while (iterator.hasNext()) {
             Double proximo = iterator.next();
             soma += proximo;
         }
-        System.out.println("Exiba a soma de todas  as notas: "+ soma);
+        System.out.println("Exiba a soma de todas  as notas: " + soma);
 
-        System.out.println("A Media das notas: "  + (soma / notas.size()));
+        System.out.println("A Media das notas: " + (soma / notas.size()));
 
         System.out.println("Remova o item na posicao 1: ");
         notas.remove(0);
         System.out.println(notas);
-        
+
         System.out.println("Remova todo numero menor que 6: ");
         Iterator<Double> iterator2 = notas.iterator();
-        while(iterator2.hasNext()){
+        while (iterator2.hasNext()) {
             Double proximo = iterator2.next();
-            if(proximo < 6){
+            if (proximo < 6) {
                 iterator2.remove();
             }
         }

@@ -1,3 +1,5 @@
+package Set;
+
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashSet;
@@ -8,7 +10,7 @@ import java.util.TreeSet;
 
 public class ExemploSet {
     public static void main(String[] args) {
-        
+
         System.out.println("Crie um conujunto e adicione notas: ");
         Set<Double> notas = new HashSet<>(Arrays.asList(8.1, 7.8, 5.6, 7.8, 3.5, 2.2));
         System.out.println(notas);
@@ -22,14 +24,14 @@ public class ExemploSet {
         Iterator<Double> iterator = notas.iterator();
         Double soma = 0d;
 
-        while(iterator.hasNext()){
+        while (iterator.hasNext()) {
             Double next = iterator.next();
             soma += next;
         }
 
         System.out.println("Exiba a soma dos Valores: " + soma);
 
-        System.out.println("Exiba a media dos Valores: " + (soma/notas.size()));
+        System.out.println("Exiba a media dos Valores: " + (soma / notas.size()));
 
         System.out.println("Remova a nota 3.5: ");
         notas.remove(3.5d);
@@ -39,9 +41,9 @@ public class ExemploSet {
 
         Iterator<Double> iterator1 = notas.iterator();
 
-        while(iterator1.hasNext()){
+        while (iterator1.hasNext()) {
             Double next = iterator1.next();
-            if(next < 7){
+            if (next < 7) {
                 iterator1.remove();
             }
         }
@@ -57,10 +59,5 @@ public class ExemploSet {
         Set<Double> notas3 = new TreeSet<>(notas2);
         System.out.println(notas3);
 
-
-
-
     }
 }
-
- 

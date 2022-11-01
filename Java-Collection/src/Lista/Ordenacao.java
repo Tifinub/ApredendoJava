@@ -1,3 +1,5 @@
+package Lista;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -6,11 +8,13 @@ import java.util.List;
 public class Ordenacao {
     public static void main(String[] args) {
 
-        List<Gato> gatos = new ArrayList<>(){{
-            add(new Gato("Abae", 7 , "Amarelo"));
-            add(new Gato("Enzo", 1 , "Branco"));
-            add(new Gato("Lirou", 2 , "Cinza"));
-        }};
+        List<Gato> gatos = new ArrayList<>() {
+            {
+                add(new Gato("Abae", 7, "Amarelo"));
+                add(new Gato("Enzo", 1, "Branco"));
+                add(new Gato("Lirou", 2, "Cinza"));
+            }
+        };
 
         System.out.println("Ordem de inserção: ");
         System.out.println(gatos);
@@ -24,61 +28,59 @@ public class Ordenacao {
         System.out.println(gatos);
 
         System.out.println("Ordem por Idade: ");
-        //Collections.sort(gatos ,new ComparatorIdade());
+        // Collections.sort(gatos ,new ComparatorIdade());
         gatos.sort(new ComparatorIdade());
         System.out.println(gatos);
 
         System.out.println("Ordem por Cor: ");
-        //Collections.sort(gatos ,new ComparatorCor());
+        // Collections.sort(gatos ,new ComparatorCor());
         gatos.sort(new ComparatorCor());
         System.out.println(gatos);
 
         System.out.println("Ordem por Nome/Cor/Idade: ");
-        //Collections.sort(gatos ,new ComparatorNomeCorIdade());
+        // Collections.sort(gatos ,new ComparatorNomeCorIdade());
         gatos.sort(new ComparatorNomeCorIdade());
         System.out.println(gatos);
-
-
 
     }
 }
 
-    class Gato implements Comparable<Gato>{
-        private String nome;
-        private int idade;
-        private String cor;
-        
-        public Gato (String nome,int idade, String cor) {
-            this.nome = nome;
-            this.idade = idade;
-            this.cor = cor;            
-        }
+class Gato implements Comparable<Gato> {
+    private String nome;
+    private int idade;
+    private String cor;
 
-        public String getNome(){
-            return nome;
-        }
-        public int getIdade(){
-            return idade;
-        }
-        public String getCor(){
-            return cor;
-        }
+    public Gato(String nome, int idade, String cor) {
+        this.nome = nome;
+        this.idade = idade;
+        this.cor = cor;
+    }
 
-        @Override
-        public String toString() {
-            return (
-                "{Nome='" + nome + "', idade='" + idade + "', cor='" + cor + "'}"
-            );
-        }
+    public String getNome() {
+        return nome;
+    }
 
-        @Override
-        public int compareTo(Gato gato) {
-            return this.getNome().compareToIgnoreCase(gato.nome);
-        }
+    public int getIdade() {
+        return idade;
+    }
 
-    } 
+    public String getCor() {
+        return cor;
+    }
 
-class ComparatorIdade implements Comparator<Gato>{
+    @Override
+    public String toString() {
+        return ("{Nome='" + nome + "', idade='" + idade + "', cor='" + cor + "'}");
+    }
+
+    @Override
+    public int compareTo(Gato gato) {
+        return this.getNome().compareToIgnoreCase(gato.nome);
+    }
+
+}
+
+class ComparatorIdade implements Comparator<Gato> {
 
     @Override
     public int compare(Gato gato1, Gato gato2) {
@@ -87,7 +89,7 @@ class ComparatorIdade implements Comparator<Gato>{
 
 }
 
-class ComparatorCor implements Comparator<Gato>{
+class ComparatorCor implements Comparator<Gato> {
 
     @Override
     public int compare(Gato gato1, Gato gato2) {
@@ -95,19 +97,19 @@ class ComparatorCor implements Comparator<Gato>{
     }
 }
 
-class ComparatorNomeCorIdade implements Comparator<Gato>{
+class ComparatorNomeCorIdade implements Comparator<Gato> {
 
     @Override
     public int compare(Gato gato1, Gato gato2) {
         int nome = gato1.getNome().compareToIgnoreCase(gato2.getNome());
 
-        if(nome != 0){
+        if (nome != 0) {
             return nome;
         }
 
         int cor = gato1.getCor().compareToIgnoreCase(gato2.getNome());
 
-        if(nome != 0){
+        if (nome != 0) {
             return cor;
         }
 
@@ -116,4 +118,3 @@ class ComparatorNomeCorIdade implements Comparator<Gato>{
     }
 
 }
-
