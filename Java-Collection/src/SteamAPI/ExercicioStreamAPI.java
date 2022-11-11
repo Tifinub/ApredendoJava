@@ -16,8 +16,20 @@ public class ExercicioStreamAPI {
 
         System.out.println("Transforme String em Inteiro: ");
 
-        List<Integer> numeros2 = (List<Integer>) numeros.stream().map(s -> Integer.parseInt(s))
+        List<Integer> numeros2 = (List<Integer>) numeros.stream()
+                .map(s -> Integer.parseInt(s))
                 .collect(Collectors.toList());
+        System.out.println(numeros2);
 
+        System.out.println("Imprima numeros pares e maiores que 2");
+        numeros2.stream().filter(i -> i % 2 == 0 && i > 2).collect(Collectors.toList()).forEach(System.out::println);
+
+        System.out.println("Mostre a media dos numeros: ");
+
+        numeros.stream().mapToInt(Integer::parseInt).average().ifPresent(System.out::println);
+
+        System.out.println("Remova os Valores impares: ");
+        numeros2.removeIf(i -> i % 2 != 0);
+        System.out.println(numeros2);
     }
 }
